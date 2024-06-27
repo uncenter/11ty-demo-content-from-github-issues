@@ -1,0 +1,24 @@
+---
+layout: base.njk
+pagination:
+  data: issues
+  size: 1
+  alias: issue
+permalink: "{{ issue.number }}/index.html"
+---
+
+<header>
+    <a href="/">&larr;</a>
+
+    <div class="user_info">
+        <img src="{{ issue.user.avatar_url }}" />
+        <p>{{ issue.user.login }}</p>
+    </div>
+</header>
+
+<hr>
+
+<main class="issue_content">
+    <h1>{{ issue.title | renderMdInline | safe }}</h2>
+    <p>{{ issue.body | renderMd | safe }}</p>
+</main>

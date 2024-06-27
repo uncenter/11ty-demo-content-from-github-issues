@@ -1,0 +1,8 @@
+---
+layout: base.njk
+---
+<ol>
+{% for issue in issues %}
+<li><a href="{{ issue.number }}/">{{ issue.number }} - {{ issue.title | renderMdInline | safe }}</a></li>
+{% endfor %}
+</ol>
